@@ -18,6 +18,7 @@ const appStore = useAppStore()
 const permissionStore = usePermissionStore()
 const settingsStore = useSettingsStore()
 
+permissionStore.setRoutes(["admin"])
 const { showSidebarLogo } = storeToRefs(settingsStore)
 
 const activeMenu = computed(() => {

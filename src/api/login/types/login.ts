@@ -3,12 +3,26 @@ export interface LoginRequestData {
   username: "admin" | "editor"
   /** 密码 */
   password: string
-  /** 验证码 */
-  code: string
 }
 
-export type LoginCodeResponseData = ApiResponseData<string>
+export type LoginCodeResponseData = string
 
-export type LoginResponseData = ApiResponseData<{ token: string }>
+export type LoginResponseData = { access_token: string }
 
-export type UserInfoResponseData = ApiResponseData<{ username: string; roles: string[] }>
+export interface Article {
+  _id: string
+  abstract: string
+  author: string
+  createdAt: number
+  title: string
+  tags: Tag[]
+}
+
+export interface ArticleDetail extends Article {
+  content: string
+  tags: Tag[]
+}
+export interface Tag {
+  _id: string
+  tagName: string
+}
