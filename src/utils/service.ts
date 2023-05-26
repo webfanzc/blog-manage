@@ -99,6 +99,7 @@ function createRequestFunction(service: AxiosInstance) {
       baseURL: import.meta.env.VITE_BASE_API,
       data: {}
     }
+    config.params = { ...config.params, ts: Date.now() }
     return service(Object.assign(configDefault, config))
   }
 }
