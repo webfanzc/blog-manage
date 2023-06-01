@@ -95,3 +95,33 @@ export function deleteUnusedTags() {
     method: "get"
   })
 }
+export function addDemo(data: Omit<Login.Demo, "_id">) {
+  return request({
+    url: "/demos/add",
+    method: "post",
+    data
+  })
+}
+
+export function editDemo(data: Login.EditDemoParams) {
+  return request({
+    url: "/demos/update",
+    method: "post",
+    data
+  })
+}
+
+export function getDemos() {
+  return request<Login.Demo[]>({
+    url: "/demos/list",
+    method: "get"
+  })
+}
+
+export function deleteDemo(params: { id: string }) {
+  return request({
+    url: "/demos/delete",
+    method: "get",
+    params
+  })
+}

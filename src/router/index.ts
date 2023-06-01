@@ -116,6 +116,27 @@ export const constantRoutes: RouteRecordRaw[] = [
         }
       }
     ]
+  },
+  {
+    path: "/demos",
+    component: Layout,
+    redirect: "/demos/list",
+    name: "Demos",
+    meta: {
+      title: "Demo管理",
+      elIcon: "Grid"
+    },
+    children: [
+      {
+        path: "/demos/list",
+        component: () => import("@/views/demos/list/index.vue"),
+        name: "DemosList",
+        meta: {
+          title: "Demo列表",
+          keepAlive: true
+        }
+      }
+    ]
   }
 ]
 

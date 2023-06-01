@@ -26,3 +26,12 @@ export interface Tag {
   _id: string
   tagName: string
 }
+export interface Demo {
+  link: string
+  poster: string
+  desc: string
+  _id: string
+}
+export interface EditDemoParams extends Omit<Demo, "_id"> {
+  id: string
+}
